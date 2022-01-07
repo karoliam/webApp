@@ -1,0 +1,489 @@
+
+p {
+    font-family: 'Karla', sans-serif;
+}
+
+h1 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: 'Old Standard TT', serif;
+    font-size: 70px;
+    color: white;
+    text-shadow: 2px 2px #157A6E;
+    text-align: center;
+    padding: 30px;
+    background-image: url("tausta.jpg");
+    border-radius: 0px;
+
+}
+
+h2 {
+    font-family: 'Karla', sans-serif;
+}
+
+body {
+    background-color: #F7CAC9;
+    font-family: 'Karla', sans-serif;
+    margin: 0px 30px 0px 30px;
+    border-radius: 14px;
+}
+
+form {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Tapahtumat ja kartta yhteisessä divissä */
+
+/* Kartta */
+#map {
+    width: 400px;
+    height: 400px;
+    border-radius: 25px;
+
+}
+
+/* Kartan ikonit */
+
+.tapahtuma-ikoni {
+    background-image: url("tapahtumaikoni.png");
+    background-size: 100% 100%;
+
+}
+
+.omasijainti-ikoni {
+    background-image: url("omasijaintiikoni.png");
+    background-size: 100% 100%;
+
+}
+
+.leaflet-popup-content {
+    font-family: 'Karla', sans-serif;
+}
+
+/* Tämä olemassa jotta ensimmäisessä kartassa ei näkyisi matkustustapavalikkoa */
+
+.hidden {
+    display: none;
+}
+
+#reititysohjeet {
+    max-width: 400px;
+    height: 500px;
+    box-sizing: border-box;
+    overflow: auto;
+    background: white;
+}
+
+
+#container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0px 0px 24px 0px;
+}
+
+#events {
+    flex: auto;
+    flex-direction: column-reverse;
+    width: 50%;
+    margin: 35px 0px 0px 0px;
+
+}
+
+#hakuteksti {
+    font-family: 'Karla', sans-serif;
+    padding: 24px;
+    border-radius: 50px;
+    background-position: 95% center;
+    border: 1px solid #F7CAC9;
+    outline: none;
+}
+
+#hakunappi {
+    font-family: 'Karla', sans-serif;
+    background-size: 18px 18px;
+    background-position: 95% center;
+    border-radius: 50px;
+    border: 1px solid #F7CAC9;
+    margin: 10px 0px 0px 0px;
+    background-color: #CCA43B;
+}
+
+#hakunappi:active {
+    color: grey;
+    background-color: lightgray;
+}
+
+
+#hakunappi:hover {
+    background-color: #157A6E;
+}
+
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: flex-end;
+    margin: 0px 0px 90px 0px;
+
+}
+
+img {
+    border-radius: 10px;
+    width: 600px;
+    margin: 5px;
+}
+
+#mapContainer {
+    margin: 0px 24px 0px 0px;
+}
+
+#reititysohjeet {
+
+    border-radius: 10px;
+    margin: 0px 15px 70px 5px;
+}
+
+#reititysohjeet:empty {
+    display: none;
+}
+
+#navigointi {
+    font-family: 'Karla', sans-serif;
+    border-radius: 50px;
+    border: 1px solid #F7CAC9;
+    margin: 10px 0px 0px 0px;
+    background-color: #CCA43B;
+
+}
+
+#navigointi:active {
+    color: grey;
+    background-color: lightgray;
+}
+
+#navigointi:hover {
+    background-color: #157A6E;
+}
+
+#kartanAlleTiedot {
+    text-align: justify;
+    background: white;
+    border-color: #CCA43B;
+    border-radius: 8px;
+    border-style: dashed;
+    padding: 1px 24px 1px 24px;
+    width: 50%;
+    display: none;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: 62px;
+    width: auto;
+    background: #157A6E;
+    border-radius: 0px 0px 47px 47px;
+    margin-top: -1px;
+    margin-bottom: 65px;
+}
+
+#kaupunki {
+    font-family: 'Karla', sans-serif;
+    border-radius: 22px;
+    padding: 5px;
+    background-color: white;
+    margin-top: 10px;
+}
+
+#kaupunkihakunappi {
+    font-family: 'Karla', sans-serif;
+    border-radius: 19px;
+    border-color: transparent;
+    padding: 1px;
+    margin: 10px 0px 0px 10px;
+    background-color: #F7CAC9;
+}
+
+#kaupunkihakunappi:active {
+    color: grey;
+    background-color: lightgray;
+}
+
+#kaupunkihakunappi:hover {
+    background-color: #CCA43B;
+}
+
+/*Menubar ikonit */
+.homeIcon {
+    background-image: url("homeIcon.svg");
+    background-size: 30px;
+    height: 30px;
+    width: 30px;
+    display: block;
+}
+
+.homeIcon:hover {
+    background-image: url("homeIconWhite.svg");
+    background-size: 30px;
+    height: 30px;
+    width: 30px;
+    display: block;
+}
+
+.iconPhoto {
+    background-image: url("pictureIcon.svg");
+    background-size: 30px;
+    height: 30px;
+    width: 30px;
+    display: block;
+}
+
+.videoIcon {
+    background-image: url("iconvideo.svg");
+    background-size: 30px;
+    height: 30px;
+    width: 30px;
+    display: block;
+}
+
+.videoIcon:hover {
+    background-image: url("iconvideoWhite.svg");
+    background-size: 30px;
+    height: 30px;
+    width: 30px;
+    display: block;
+}
+
+.iconPhoto {
+    background-image: url("pictureIcon.svg");
+    background-size: 30px;
+    height: 30px;
+    width: 30px;
+    display: block;
+}
+
+.iconPhoto:hover {
+    background-image: url("pictureIconWhite.svg");
+    background-size: 30px;
+    height: 30px;
+    width: 30px;
+    display: block;
+}
+
+.validatorIcon {
+    background-image: url("validaattori.svg");
+    background-size: 30px;
+    height: 30px;
+    width: 30px;
+    display: block;
+}
+
+.validatorIcon:hover {
+    background-image: url("validaattoriWhite12.svg");
+    background-size: 30px;
+    height: 30px;
+    width: 30px;
+    display: block;
+}
+
+/* Home-link */
+#homeLink {
+    text-decoration: none;
+    color: white;
+}
+
+#homeLink:hover {
+    color: black;
+}
+
+#homeLink:active {
+    color: grey;
+}
+
+/* Photo-link */
+#photosLink {
+    text-decoration: none;
+    color: white;
+}
+
+#photosLink:hover {
+    color: black;
+}
+
+#photosLink:active {
+    color: grey;
+}
+
+/* Validator-link */
+#validatorLink {
+    text-decoration: none;
+    color: white;
+}
+
+#validatorLink:hover {
+    color: black;
+}
+
+#validatorLink:active {
+    color: grey;
+}
+
+/* Video-link */
+
+#videoLink {
+    text-decoration: none;
+    color: white;
+}
+
+#videoLink:hover {
+    color: black;
+}
+
+#videoLink:active {
+    color: grey;
+}
+
+
+@media only screen and (max-width: 600px) {
+    #container {
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    /*Menubar ikonit */
+    .homeIcon {
+        background-size: 10px;
+        background-repeat: no-repeat;
+        height: 10px;
+        width: 10px;
+        display: block;
+
+    }
+
+    .homeIcon:hover {
+        background-size: 10px;
+        background-repeat: no-repeat;
+        height: 10px;
+        width: 10px;
+        display: block;
+    }
+
+    .iconPhoto {
+        background-size: 10px;
+        background-repeat: no-repeat;
+        height: 10px;
+        width: 10px;
+        display: block;
+    }
+
+    .videoIcon {
+        background-size: 10px;
+        background-repeat: no-repeat;
+        height: 10px;
+        width: 10px;
+        display: block;
+    }
+
+    .videoIcon:hover {
+        background-size: 10px;
+        background-repeat: no-repeat;
+        height: 10px;
+        width: 10px;
+        display: block;
+    }
+
+    .iconPhoto {
+        background-size: 10px;
+        background-repeat: no-repeat;
+        height: 10px;
+        width: 10px;
+        display: block;
+    }
+
+    .iconPhoto:hover {
+        background-size: 10px;
+        background-repeat: no-repeat;
+        height: 10px;
+        width: 10px;
+        display: block;
+    }
+
+    .validatorIcon {
+        background-size: 10px;
+        height: 10px;
+        width: 10px;
+        display: block;
+    }
+
+    .validatorIcon:hover {
+        background-size: 10px;
+        height: 10px;
+        width: 10px;
+        display: block;
+    }
+
+    /* Home-link */
+    #homeLink {
+        font-size: 5px;
+    }
+
+    /* Photo-link */
+    #photosLink {
+        font-size: 5px;
+    }
+
+    /* Validator-link */
+    #validatorLink {
+        font-size: 5px;
+    }
+
+    /* Video-link */
+    #videoLink {
+        font-size: 5px;
+    }
+
+    #kaupunki {
+        font-family: 'Karla', sans-serif;
+        border-radius: 22px;
+        padding: 2px;
+        background-color: white;
+        margin-top: 2px;
+        font-size: 10px;
+    }
+
+    #kaupunkihakunappi {
+        font-family: 'Karla', sans-serif;
+        border-radius: 19px;
+        border-color: transparent;
+        padding: 1px;
+        margin: 1px 0px 0px 1px;
+        background-color: #F7CAC9;
+        font-size: 10px;
+    }
+
+    /* Kartta */
+    #map {
+        width: 300px;
+        height: 300px;
+        border-radius: 25px;
+
+    }
+}
+
+

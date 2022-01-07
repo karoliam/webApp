@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tapahtumasovellus</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <!--    FONTIT-->
+    <!-- leipäteksti -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+    <!-- otsikko -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:wght@700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/jpg" href="favicon.png"/>
+</head>
+<body>
+<header>
+    <h1>EventIt</h1>
+
+    <ul>
+        <li><a href="/~karoliam/projekti"><span class="homeIcon"></span></a>
+            <a href="/~karoliam/projekti" id="homeLink">Home</a></li>
+        <li><a href="/~karoliam/projekti/mediasivu/mediasivu.html"><span class="iconPhoto"></span></a>
+            <a href="/~karoliam/projekti/mediasivu/mediasivu.html" id="photosLink">Photos</a></li>
+        <li><a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fusers.metropolia.fi%2F~karoliam%2Fprojekti%2F"><span
+                class="validatorIcon"></span></a><a
+                href="https://validator.w3.org/nu/?doc=https%3A%2F%2Fusers.metropolia.fi%2F~karoliam%2Fprojekti%2F"
+                id="validatorLink">Validator</a></li>
+        <li><a href="/~karoliam/projekti/ohjesivu/ohje.html"><span class="videoIcon"></span></a>
+            <a href="/~karoliam/projekti/ohjesivu/ohje.html" id="videoLink">Video</a></li>
+        <li>
+            <form id="kaupunkiHaku">
+                <select name="kaupunki" id="kaupunki">
+                    <option value="Helsinki">Helsinki</option>
+                    <option value="Espoo">Espoo</option>
+                    <option value="Vantaa">Vantaa</option>
+                </select>
+                <input id="kaupunkihakunappi" type="submit" value="Hae">
+            </form>
+        </li>
+    </ul>
+</header>
+
+<div id="pudotusvalikko-matkustus" class="hidden">
+    <b>Valitse matkustustapa</b>
+    <select id="mode">
+        <option value="DRIVING">Auto</option>
+        <option value="WALKING">Kävely</option>
+        <option value="BICYCLING">Pyöräily</option>
+        <option value="TRANSIT">Julkinen</option>
+    </select>
+</div>
+<main>
+
+    <div id="container">
+        <div id="mapContainer">
+            <div id="map"></div>
+            <div>
+                <button id="navigointi">Navigoi</button>
+            </div>
+        </div>
+        <div id="reititysohjeet"></div>
+
+        <form id="hakutekstiForm"
+              action="https://vast-bayou-87653.herokuapp.com/https://open-api.myhelsinki.fi/v1/events/">
+            <div class="search-container">
+                <input id="hakuteksti" type="text" name="q">
+                <button id="hakunappi">Hae</button>
+                <div id="events"></div>
+            </div>
+        </form>
+    </div>
+    <article id="kartanAlleTiedot">
+        <h3 id="tapahtumanNimi"></h3>
+        <div id="navigoi"></div>
+        <span id="tapahtumanAloituspv"></span>
+        <span id="tapahtumanLopetuspv"></span>
+        <h4 id="tapahtumanOsoite"></h4>
+        <h4 id="tapahtumanKaupunki"></h4>
+        <p id="tapahtumanKuvaus"></p>
+        <p id="tapahtumanLinkki"></p>
+    </article>
+</main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+<script src="karttasivu.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATSHMZl4R6TuduGRhc4A54yMPGZQDgoPw&callback=initMap&v=weekly"
+        async></script>
+</body>
+</html>
